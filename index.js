@@ -123,7 +123,7 @@ const questions = () => {
     // Question #9 - Email
     {
       type: "input",
-      name: "title",
+      name: "email",
       message: "Enter your email address (Required)",
       validate: (nameInput) => {
         if (nameInput) {
@@ -138,10 +138,25 @@ const questions = () => {
 };
 
 // function to write README file
-function writeToFile(fileName, data) {}
+
+function writeFile(data) {
+  return new Promise((resolve, reject) => {
+    fs.writeFile("./test-project.md", generateMarkdown(data), (error) => {
+      if (error) {
+        reject(error);
+        return;
+      }
+      resolve({ ok: true, message: "test-project.md created" });
+    });
+  });
+}
 
 // function to initialize program
-function init() {}
+function init() {
+  questions().then((data) => {
+    writeFile(data);
+  });
+}
 
 // function call to initialize program
 init();
