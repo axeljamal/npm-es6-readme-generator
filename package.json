@@ -1,7 +1,7 @@
 {
   "name": "static-site",
   "version": "1.0.0",
-  "description": "",
+  "description": "Working with ES6 &amp; Node.js: Professional README Generator",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,5 +10,14 @@
   "license": "ISC",
   "dependencies": {
     "inquirer": "^6.3.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/axeljamal/npm-es6-readme-generator.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/axeljamal/npm-es6-readme-generator/issues"
+  },
+  "homepage": "https://github.com/axeljamal/npm-es6-readme-generator#readme"
 }
