@@ -21,7 +21,8 @@
   
   
   ## Installation
-  None
+  
+  Fork or clone the repository, npm i inquirer on terminal, node index.js to prompt the questions.
   
   ## Usage
   Create a command-line application that accepts user input.
@@ -64,7 +65,7 @@
   [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
   
   ## Contributing
-  None
+  axeljamal
   
   ## Tests
   None
