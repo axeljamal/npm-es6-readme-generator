@@ -1,15 +1,16 @@
 const fs = require("fs");
+const path = require("path");
 const inquirer = require("inquirer");
 const generateMarkdown = require("./utils/generateMarkdown");
 
-// array of questions for user
+// array of questions for user  with each validation statement logs
 const questions = () => {
   return inquirer.prompt([
     // Question #1 - Project Title
     {
       type: "input",
       name: "title",
-      message: "What would you be your project called? (Required)",
+      message: "What is the title of your project? (Required)",
       validate: (nameInput) => {
         if (nameInput) {
           return true;
@@ -23,7 +24,7 @@ const questions = () => {
     {
       type: "input",
       name: "description",
-      message: "Can you give a brief description of your project?",
+      message: "Please provide a brief description of your project",
       validate: (nameInput) => {
         if (nameInput) {
           return true;
@@ -37,7 +38,7 @@ const questions = () => {
     {
       type: "input",
       name: "installation",
-      message: "How to install your project?",
+      message: "Please provide installation insturctions for your project",
       validate: (nameInput) => {
         if (nameInput) {
           return true;
@@ -53,7 +54,7 @@ const questions = () => {
     {
       type: "input",
       name: "usage",
-      message: "Enter usage information for your project",
+      message: "Please provide usage information for your project",
       validate: (nameInput) => {
         if (nameInput) {
           return true;
@@ -141,13 +142,22 @@ const questions = () => {
 
 function writeFile(data) {
   return new Promise((resolve, reject) => {
-    fs.writeFile("./test-project.md", generateMarkdown(data), (error) => {
-      if (error) {
-        reject(error);
-        return;
+    fs.writeFile(
+      "./generated-readme/README.md",
+      generateMarkdown(data),
+      (error) => {
+        if (error) {
+          reject(error);
+          return;
+        }
+        resolve({
+          ok: true,
+          message: console.log(
+            "Successfully created README.md file in generated-readme folder!"
+          ),
+        });
       }
-      resolve({ ok: true, message: "test-project.md created" });
-    });
+    );
   });
 }
 
