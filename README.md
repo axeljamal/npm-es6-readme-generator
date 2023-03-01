@@ -24,6 +24,13 @@
   
   Fork or clone the repository, npm i inquirer on terminal, node index.js to prompt the questions.
   
+      git@github.com:axeljamal/npm-es6-readme-generator.git
+  
+      npm i
+      
+      node index.js
+      
+  
   ## Usage
   Create a command-line application that accepts user input.
 
