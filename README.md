@@ -24,10 +24,11 @@
   
   Fork or clone the repository, npm i inquirer on terminal, node index.js to prompt the questions.
   
+  Reposotory:
       git@github.com:axeljamal/npm-es6-readme-generator.git
-  
+  Install the following on terminal:
       npm i
-      
+  Run this on terminal:    
       node index.js
       
   
